@@ -9,6 +9,11 @@ body {
   background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
 }
 
+.birthdayCard,
+.cardInside {
+  background: url("imgs/texturebg.jpg");
+  background-size: contain;
+}
 .birthdayCard {
   position: relative;
   width: 450px;
@@ -17,13 +22,6 @@ body {
   transform-style: preserve-3d;
   transform: perspective(2500px);
   transition: 1s;
-}
-
-.birthdayCard,
-.cardFront,
-.cardInside {
-  background: url("texturebg.jpg");
-  background-size: contain;
 }
 .open {
   /* transform: perspective(2500px) rotate(5deg); */
@@ -34,6 +32,8 @@ body {
 .open .cardFront {
   transform: rotateY(-160deg);
   border-left: solid 3px #c1b6b4;
+  background: url("imgs/texturebg.jpg");
+  background-size: contain;
 }
 
 .birthdayCard:hover .happy {
@@ -42,7 +42,7 @@ body {
 
 .cardFront {
   position: relative;
-  background-color: #fff;
+  background: url("imgs/cover-01.png");
   width: 450px;
   height: 650px;
   overflow: hidden;
@@ -52,7 +52,135 @@ body {
   transition: 1s;
 }
 
-.balloons {
+.cardInside {
+  position: absolute;
+  background-color: #fff;
+  width: 450px;
+  height: 650px;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+}
+
+.btn-open {
+  border-radius: 100%;
+  border: 0;
+  bottom: 40%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+  max-width: 20rem;
+  outline: 0;
+  padding: 1rem 1.5rem;
+  position: absolute;
+  right: 33%;
+  text-align: center;
+  white-space: normal;
+}
+
+.mirror {
+  transition: all 0.7s;
+  transform: rotateY(180deg);
+}
+
+.fa-angle-right {
+  transition: all 0.7s;
+}
+
+.grid {
+  margin-top: 1.5rem;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+.hidden {
+  visibility: hidden;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 75%;
+  z-index: 2;
+  display: none;
+}
+
+.modal-open {
+  background: none;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.modal-content {
+  background: white;
+  margin-top: 2rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem 1.5rem;
+  border-radius: 10px;
+  z-index: 4;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10%;
+  right: 2rem;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* .modal-show {
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 1rem 1rem;
+  margin: 3rem 1rem;
+  border: none;
+  background: none;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 85%;
+
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+} */
+
+/* .balloons {
   position: absolute;
 }
 
@@ -129,88 +257,4 @@ body {
 
 .balloonFour:after {
   border-bottom: 10px solid #118ab2;
-}
-
-.cardInside {
-  position: absolute;
-  background-color: #fff;
-  width: 450px;
-  height: 650px;
-  z-index: -1;
-  left: 0;
-  top: 0;
-  box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
-}
-
-.btn {
-  border-radius: 100%;
-  border: 0;
-  bottom: 40%;
-  cursor: pointer;
-  font-size: 1.5rem;
-  margin: 1.5rem 0;
-  max-width: 20rem;
-  outline: 0;
-  padding: 1rem 1.5rem;
-  position: absolute;
-  right: 33%;
-  text-align: center;
-  white-space: normal;
-}
-
-.mirror {
-  transition: all 0.7s;
-  transform: rotateY(180deg);
-}
-
-.fa-angle-right {
-  transition: all 0.7s;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-}
-
-.show-modal {
-  font-size: 1rem;
-  font-weight: 400;
-  padding: 1rem 1rem;
-  margin: 3rem 1rem;
-  border: none;
-  background: none;
-  color: white;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.close-modal {
-  position: absolute;
-  top: 1.2rem;
-  right: 2rem;
-  font-size: 2rem;
-  color: #333;
-  cursor: pointer;
-  border: none;
-  background: none;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-.modal {
-  position: absolute;
-  top: 50%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 85%;
-
-  background-color: white;
-  padding: 6rem;
-  border-radius: 5px;
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-  z-index: 10;
-}
+} */

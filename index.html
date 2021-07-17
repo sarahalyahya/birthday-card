@@ -32,34 +32,45 @@
       </div>
       <div class="cardInside">
         <div class="grid">
-          <button class="show-modal">
-            <img src="imgs/env_sy-01.png" alt="" />
-          </button>
-          <div class="modal hidden">
-            <button class="close-modal">&times;</button>
-            <h1>Dear Yasmine,</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
+          <div class="modal1btn">
+            <button class="modal-open" data-modal="modal1">
+              <img src="imgs/env_sy-01.png" alt="" />
+            </button>
+          </div>
+          <div class="modal2btn">
+            <button class="modal-open" data-modal="modal2">
+              <img src="imgs/env_am-01.png" alt="" />
+            </button>
           </div>
         </div>
 
-        <!-- <h3 class="back">HAPPY BIRTHDAY!</h3>
-        <p>Dear Friend,</p>
-        <p>
-          Happy birthday!! I hope your day is filled with lots of love and
-          laughter! May all of your birthday wishes come true.
-        </p>
-        <p class="name">xxx</p> -->
+        <div class="modal" id="modal1">
+          <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h1>Dear Yasmine,</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem
+              odit sequi voluptas assumenda placeat expedita a recusandae ipsam!
+              Alias distinctio reprehenderit fuga numquam nemo eveniet culpa
+              provident, ducimus dignissimos rem.
+            </p>
+          </div>
+        </div>
+        <div class="modal" id="modal2">
+          <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <h1>Dear Yasmine,</h1>
+            <p>
+              LAAAAAAorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Dolorem odit sequi voluptas assumenda placeat expedita a
+              recusandae ipsam! Alias distinctio reprehenderit fuga numquam nemo
+              eveniet culpa provident, ducimus dignissimos rem.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
-    <button class="btn"><i class="fas fa-angle-right"></i></button>
+    <button class="btn-open"><i class="fas fa-angle-right"></i></button>
 
     <script src="script.js"></script>
   </body>
