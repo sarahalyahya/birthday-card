@@ -1,9 +1,12 @@
 body {
+  font-family: "Courgette", cursive;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #073b4c;
+  /* background-color: #073b4c; */
+  background-color: #63a4ff;
+  background-image: linear-gradient(315deg, #63a4ff 0%, #83eaf1 74%);
 }
 
 .birthdayCard {
@@ -16,6 +19,12 @@ body {
   transition: 1s;
 }
 
+.birthdayCard,
+.cardFront,
+.cardInside {
+  background: url("texturebg.jpg");
+  background-size: contain;
+}
 .open {
   /* transform: perspective(2500px) rotate(5deg); */
   box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
@@ -24,6 +33,7 @@ body {
 
 .open .cardFront {
   transform: rotateY(-160deg);
+  border-left: solid 3px #c1b6b4;
 }
 
 .birthdayCard:hover .happy {
@@ -40,14 +50,6 @@ body {
   box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
     30px 0 50px rgba(0, 0, 0, 0.4);
   transition: 1s;
-}
-
-.happy {
-  font-family: Tahoma, sans-serif;
-  text-align: center;
-  margin: 30px;
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-  transition: 0.1s;
 }
 
 .balloons {
@@ -140,28 +142,6 @@ body {
   box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
 }
 
-p {
-  font-family: "Brush Script MT", cursive;
-  margin: 40px;
-  color: #333;
-}
-
-.name {
-  position: absolute;
-  left: 150px;
-  top: 200px;
-  color: #333;
-}
-
-.back {
-  font-family: Tahoma, sans-serif;
-  color: #333;
-  text-align: center;
-  margin: 30px;
-  outline-color: #333;
-  outline-style: dotted;
-}
-
 .btn {
   border-radius: 100%;
   border: 0;
@@ -195,11 +175,11 @@ p {
 
 .show-modal {
   font-size: 1rem;
-  font-weight: 600;
-  padding: 1.5rem 1.5rem;
+  font-weight: 400;
+  padding: 1rem 1rem;
   margin: 3rem 1rem;
   border: none;
-  background-color: blue;
+  background: none;
   color: white;
   border-radius: 50%;
   cursor: pointer;
@@ -217,15 +197,16 @@ p {
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 
 .modal {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 70%;
   transform: translate(-50%, -50%);
-  width: 70%;
+  width: 100%;
+  height: 85%;
 
   background-color: white;
   padding: 6rem;
@@ -233,64 +214,3 @@ p {
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
 }
-
-/* body {
-    background: #4e9bfa
-  }
-  
-  .container {
-    width: 250px;
-    height: 350px;
-    background: #2e517d;
-    position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    perspective: 1000px;
-  }
-  
-  .cover {
-    width: 210px;
-    height: 100%;
-    position: absolute;
-    left: 40px;
-    background-color: #34b58c;
-    transform: rotateY(0deg);
-    transform-style: preserve-3d;
-    transform-origin: left;
-    transition: all .5s ease-in;
-  }
-  
-    .open{
-    transform: rotateY(-180deg);
-  }
-  
-  .fig {
-    margin: 0;
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-  }
-  
-  .fig.front {
-    background: red;
-  }
-  
-  .fig.back {
-    background: green;
-    transform: rotateY(180deg);
-  }
-  .btn {
-    border-radius: 8px;
-    border: 0;
-    cursor: pointer;
-    font-size: 1.5rem;
-    margin: 1.5rem 0;
-    outline: 0;
-    padding: 1.5rem 3rem;
-    text-align: center;
-    white-space: normal;
-    max-width: 20rem;
-    position: relative;
-  } */

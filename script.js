@@ -4,6 +4,11 @@ let btn = document.querySelector('.btn');
 let cardBtn = document.querySelector('.fas')
 let card = document.querySelector('.birthdayCard')
 cover.classList.remove('open');
+let modal = document.querySelector('.modal');
+let overlay = document.querySelector('.overlay');
+let btnCloseModal = document.querySelector('.close-modal');
+let btnsOpenModal = document.querySelectorAll('.show-modal');
+
 btn.addEventListener('click', function () {
     card.classList.toggle('open')
     cover.classList.toggle('open')
@@ -11,21 +16,22 @@ btn.addEventListener('click', function () {
 
 })
 
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-const btnCloseModal = document.querySelector('.close-modal');
-const btnsOpenModal = document.querySelectorAll('.show-modal');
 
 //close modal function
 const closeModal = function () {
   modal.classList.add('hidden');
-  overlay.classList.add('hidden');
+  btn.classList.remove('hidden');
+  cardBtn.classList.remove('hidden');
+  
+ 
 };
 
 //open modal function
 const openModal = function () {
   modal.classList.remove('hidden');
-  overlay.classList.remove('hidden');
+  btn.classList.add('hidden');
+  cardBtn.classList.add('hidden');
+  
 };
 
 //looping through buttons node list
@@ -35,11 +41,5 @@ for (let i = 0; i < btnsOpenModal.length; i++) {
 
 //closing upon clicking on 'X' or overlay
 btnCloseModal.addEventListener('click', closeModal);
-overlay.addEventListener('click', closeModal);
 
-//closing upon hitting ESC
-document.addEventListener('keydown', function (e) {
-  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-    closeModal();
-  }
-});
+
