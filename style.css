@@ -95,6 +95,7 @@ body {
   align-items: center;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 1fr);
+  grid-row-gap: 2.5rem;
 }
 .hidden {
   visibility: hidden;
@@ -116,17 +117,32 @@ body {
   border: 0;
   outline: none;
   cursor: pointer;
+  transition: all 0.5s;
 }
 
+.modal-open:hover {
+  transform: scale(1.2);
+}
+
+.modal-content h1 {
+  line-height: 2.5rem;
+}
 .modal-content {
-  background: white;
+  background: #f0f8ff;
+  line-height: 2rem;
   margin-top: 2rem;
   width: 80%;
+  height: 80%;
   margin-left: auto;
   margin-right: auto;
-  padding: 0.5rem 1.5rem;
+  padding: 0.5rem 2.5rem;
   border-radius: 10px;
   z-index: 4;
+  overflow-y: scroll;
+}
+
+.strike {
+  text-decoration: line-through;
 }
 
 .modal-close {
